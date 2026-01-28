@@ -3,6 +3,7 @@
 //  HookViewOnSpringBoard
 //
 //  Created by 十三哥 on 2026/1/20.
+//  QQ:350722326 WX:shisange2026 git:http://github.com/nongshifu
 //
 
 #import "SceneDelegate.h"
@@ -66,7 +67,12 @@
     }
     self.window.frame = windowScene.coordinateSpace.bounds;
     
-    [self.window makeKeyAndVisible];
+    // 只对主窗口和aaa窗口调用makeKeyAndVisible，确保aaa窗口（响应触摸）是key window
+    if ([session.persistentIdentifier isEqual: NSBundle.mainBundle.bundleIdentifier] || [session.persistentIdentifier isEqual: aaa]) {
+        [self.window makeKeyAndVisible];
+    } else {
+        [self.window setHidden:NO];
+    }
     
     
     if ([session.persistentIdentifier isEqual: NSBundle.mainBundle.bundleIdentifier] || [session.persistentIdentifier isEqual: aaa] || [session.persistentIdentifier isEqual: bbb]) {

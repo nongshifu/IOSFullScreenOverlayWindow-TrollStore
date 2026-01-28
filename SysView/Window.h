@@ -1,8 +1,7 @@
 //
-//  Window.h
-//  imgui
+//  Created by 十三哥 on 2026/1/27.
+//  QQ:350722326 WX:shisange2026 git:http://github.com/nongshifu
 //
-//  Created by 川子 on 2025/1/28.
 //
 
 #import <UIKit/UIKit.h>

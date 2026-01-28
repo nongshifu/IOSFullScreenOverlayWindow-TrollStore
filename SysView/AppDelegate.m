@@ -3,6 +3,7 @@
 //  HookViewOnSpringBoard
 //
 //  Created by 十三哥 on 2026/1/20.
+//  QQ:350722326 WX:shisange2026 git:http://github.com/nongshifu
 //
 
 #import "AppDelegate.h"
@@ -76,21 +77,22 @@ extern void FBSystemShellInitialize(id block);
     UIViewController *rootVC1 = [[UIViewController alloc] init];
     UIViewController *rootVC2 = [[UIViewController alloc] init];
     
-    // 手动创建第一个UIWindow（穿透触摸）
-    self.overlayWindowIsTouch = [[Window alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    // 手动创建第一个UIWindow（响应触摸）
+    self.overlayWindowIsTouch = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     self.overlayWindowIsTouch.backgroundColor = UIColor.clearColor;
     self.overlayWindowIsTouch.windowLevel = 10000;
     self.overlayWindowIsTouch.rootViewController = rootVC1;
     self.overlayWindowIsTouch.hidden = NO;
-    [self.overlayWindowIsTouch makeKeyAndVisible];
     
-    // 手动创建第二个UIWindow（响应触摸）
-    self.overlayWindowNoTouch = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    // 手动创建第二个UIWindow（穿透触摸）
+    self.overlayWindowNoTouch = [[Window alloc] initWithFrame:UIScreen.mainScreen.bounds];
     self.overlayWindowNoTouch.backgroundColor = UIColor.clearColor;
     self.overlayWindowNoTouch.windowLevel = 9999;
     self.overlayWindowNoTouch.rootViewController = rootVC2;
     self.overlayWindowNoTouch.hidden = NO;
-    [self.overlayWindowNoTouch makeKeyAndVisible];
+    
+    // 确保响应触摸的窗口是key window
+    [self.overlayWindowIsTouch makeKeyAndVisible];
     
     
     FBSystemShellInitialize(^(id a){

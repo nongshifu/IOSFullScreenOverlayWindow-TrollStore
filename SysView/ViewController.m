@@ -3,6 +3,7 @@
 //  HookViewOnSpringBoard
 //
 //  Created by 十三哥 on 2026/1/20.
+//  QQ:350722326 WX:shisange2026 git:http://github.com/nongshifu
 //
 
 #import "ViewController.h"
@@ -54,7 +55,9 @@
     view.layer.cornerRadius = 10;
     view.layer.masksToBounds = YES;
     [appDelegate.overlayWindowIsTouch addSubview:view];
+    
 
+    
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 30)];
     label.text = @"响应触摸";
     label.textColor = [UIColor whiteColor];

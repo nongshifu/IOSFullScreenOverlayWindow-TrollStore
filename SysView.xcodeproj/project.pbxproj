@@ -197,7 +197,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#打包的app目录\nexport appPath=$CODESIGNING_FOLDER_PATH\n#签名root文件目录\nexport entitlementsPath=$CODE_SIGN_ENTITLEMENTS\n#执行签名脚本 \nldid -S\"/Users/shisange2026/Desktop/SysView/SysView/entitlements.plist\" \"${appPath}\"\n\n\n#签名打包后 拷贝到指定目录\n\ncp -r ${appPath} /Users/shisange2026/Library/Mobile\\ Documents/com~apple~CloudDocs/Payload\n#定位到目录 压缩成zip 改成ipa 巨魔安装\ncd /Users/shisange2026/Library/Mobile\\ Documents/com~apple~CloudDocs && zip -r new.ipa Payload\n\n";
+			shellScript = "#打包的app目录\nexport appPath=$CODESIGNING_FOLDER_PATH\n#签名root文件目录\nexport entitlementsPath=$CODE_SIGN_ENTITLEMENTS\n#执行签名脚本 \nldid -S\"/Users/shisange2026/Nutstore Files/我的坚果云/工程/SysView/SysView/entitlements.plist\" \"${appPath}\"\n\n\n#签名打包后 拷贝到指定目录\n\ncp -r ${appPath} /Users/shisange2026/Library/Mobile\\ Documents/com~apple~CloudDocs/Payload\n#定位到目录 压缩成zip 改成ipa 巨魔安装\ncd /Users/shisange2026/Library/Mobile\\ Documents/com~apple~CloudDocs && zip -r new.ipa Payload\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
